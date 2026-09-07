@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Laxmi Helping Hand · Aditya Sharma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ============================================
+                   LANDING PAGE STYLES
+                   ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            margin: 0;
+            background: #080c18;
+            background-image: 
+                radial-gradient(circle at 10% 15%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 90% 85%, rgba(255, 20, 147, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, #0d1524 0%, #050810 100%);
+            overflow-x: hidden;
+        }
+
+        .glass-ultra {
+            max-width: 480px;
+            width: 100%;
+            background: rgba(10, 20, 38, 0.50);
+            backdrop-filter: blur(28px) saturate(240%);
+            -webkit-backdrop-filter: blur(28px) saturate(240%);
+            border-radius: 60px;
+            padding: 36px 28px 32px;
+            border: 1px solid rgba(255, 215, 0, 0.06);
+            box-shadow: 
+                0 60px 120px -30px rgba(0, 0, 0, 0.9),
+                0 0 0 1px rgba(255, 215, 0, 0.03),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05),
+                inset 0 -1px 0 rgba(255, 215, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .glass-ultra .glow-ring {
+            position: absolute;
+            inset: -2px;
+            border-radius: 60px;
+            padding: 2px;
+            background: conic-gradient(from 0deg, transparent, rgba(255,215,0,0.06), transparent, rgba(255,20,147,0.06), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            animation: rotateGlow 8s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header-ultra {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 26px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 6px 18px 6px 6px;
+            border-radius: 120px;
+            border: 1px solid rgba(255, 215, 0, 0.04);
+            backdrop-filter: blur(4px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar-ultra {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 8px 32px rgba(245, 166, 35, 0.2);
+            overflow: hidden;
+            background: #1a1a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .avatar-ultra img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-ultra {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .info-ultra .brand {
+            font-weight: 700;
+            font-size: 0.65rem;
+            color: #f5c842;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(255, 215, 0, 0.06);
+            padding: 2px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            width: fit-content;
+        }
+        .info-ultra .name {
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #f7e7b0 0%, #f5b82e 40%, #f7c948 70%, #f5b82e 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            animation: shimmerName 3s ease-in-out infinite;
+        }
+        @keyframes shimmerName {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .info-ultra .badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 10px;
+            margin-top: 2px;
+        }
+        .info-ultra .badges span {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #b8cfe8;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2px 14px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        .info-ultra .badges i { color: #f5c842; margin-right: 6px; }
+        .info-ultra .badges .live-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: livePulse 1.5s infinite;
+            margin-right: 4px;
+            box-shadow: 0 0 12px rgba(74, 222, 128, 0.3);
+        }
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.7); }
+        }
+
+        .stats-ultra {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 2;
+        }
+        .stat-ultra {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 16px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-ultra .number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            display: block;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+        .stat-ultra .number.gold { color: #f5c842; }
+        .stat-ultra .number.green { color: #4ade80; }
+        .stat-ultra .number.pink { color: #f472b6; }
+        .stat-ultra .number.blue { color: #60a5fa; }
+        .stat-ultra .label {
+            font-size: 0.55rem;
+            color: #8aaccc;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-top: 4px;
+            display: block;
+        }
+        .stat-ultra:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-3px);
+            border-color: rgba(255, 215, 0, 0.06);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .bio-ultra {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(8px);
+            border-radius: 34px;
+            padding: 20px 22px;
+            margin-bottom: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+        .bio-ultra .help-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #f5c842;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bio-ultra p {
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: #c6d9f0;
+        }
+        .bio-ultra strong { color: #f5c842; font-weight: 700; }
+        .bio-ultra .highlight-box {
+            background: rgba(245, 200, 66, 0.04);
+            padding: 10px 14px;
+            border-radius: 24px;
+            border: 1px solid rgba(245, 200, 66, 0.04);
+            margin-top: 10px;
+        }
+        .bio-ultra .highlight-box .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+            font-size: 0.8rem;
+            color: #b8d0ea;
+        }
+        .bio-ultra .highlight-box .row .val { color: #f5c842; font-weight: 700; }
+        .bio-ultra .lang-tag {
+            display: inline-block;
+            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 4px 18px;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            color: #b8d0ea;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        .bio-ultra .lang-tag i { color: #f5c842; margin-right: 6px; }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 12px 0 4px;
+        }
+        .process-steps .step {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 12px 6px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        .process-steps .step .num {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #f5c842;
+            display: block;
+        }
+        .process-steps .step .txt {
+            font-size: 0.55rem;
+            color: #8aaccc;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .screenshots-section {
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 2;
+        }
+        .screenshots-section .section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #f5c842;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .screenshot-grid .screenshot-item {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.3s ease;
+            aspect-ratio: 9 / 16;
+            background: rgba(0, 0, 0, 0.2);
+            position: relative;
+            cursor: pointer;
+        }
+        .screenshot-grid .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .screenshot-grid .screenshot-item:hover {
+            transform: scale(1.03);
+            border-color: rgba(255, 215, 0, 0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            z-index: 5;
+        }
+        .screenshot-grid .screenshot-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .tg-ultra {
+            background: rgba(255, 20, 147, 0.04);
+            backdrop-filter: blur(12px);
+            border-radius: 120px;
+            padding: 8px 8px 8px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgba(255, 20, 147, 0.06);
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tg-ultra:hover {
+            border-color: rgba(255, 20, 147, 0.12);
+            background: rgba(255, 20, 147, 0.06);
+            box-shadow: 0 0 50px rgba(255, 20, 147, 0.02);
+        }
+        .tg-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .tg-left i {
+            font-size: 2.4rem;
+            color: #E4405F;
+            filter: drop-shadow(0 4px 20px rgba(228, 64, 95, 0.2));
+        }
+        .tg-left .label {
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #b0cce8;
+        }
+        .tg-left .label span {
+            color: #f0f8ff;
+            font-weight: 700;
+        }
+
+        .join-ultra {
+            background: linear-gradient(135deg, #E4405F 0%, #C13584 100%);
+            border: none;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 16px 36px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px -4px rgba(228, 64, 95, 0.4);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+            flex-shrink: 0;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .join-ultra::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 50%);
+            pointer-events: none;
+        }
+        .join-ultra i {
+            font-size: 1.2rem;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        .join-ultra span {
+            position: relative;
+            z-index: 1;
+        }
+        .join-ultra:hover {
+            transform: scale(1.04);
+            box-shadow: 0 14px 50px -4px rgba(228, 64, 95, 0.5);
+            background: linear-gradient(135deg, #F56070 0%, #E4405F 100%);
+        }
+        .join-ultra:active {
+            transform: scale(0.96);
+        }
+
+        .footer-ultra {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.015);
+            font-size: 0.65rem;
+            color: #5b7a99;
+            position: relative;
+            z-index: 2;
+            flex-wrap: wrap;
+        }
+        .footer-ultra span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .footer-ultra i {
+            color: #f5c842;
+            opacity: 0.7;
+        }
+        .footer-ultra .live-badge {
+            color: #4ade80;
+            font-weight: 600;
+        }
+        .footer-ultra .live-badge i {
+            color: #4ade80;
+            opacity: 1;
+        }
+
+        /* ----- TRUSTED LINE (Admin Access) ----- */
+        .admin-trigger {
+            text-align: center;
+            margin-top: 18px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.01);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .admin-trigger span {
+            font-size: 0.7rem;
+            color: #4ade80;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: rgba(74, 222, 128, 0.02);
+            padding: 6px 20px;
+            border-radius: 40px;
+            border: 1px solid rgba(74, 222, 128, 0.04);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .admin-trigger span i {
+            margin-right: 6px;
+            color: #4ade80;
+        }
+
+        .admin-trigger:hover span {
+            background: rgba(74, 222, 128, 0.04);
+            border-color: rgba(74, 222, 128, 0.08);
+            transform: scale(1.02);
+        }
+
+        /* ============================================
+                   LIGHTBOX
+                   ============================================ */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            cursor: pointer;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+            animation: lightboxFadeIn 0.4s ease forwards;
+        }
+        @keyframes lightboxFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .lightbox-overlay .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 24px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 215, 0, 0.04);
+            position: relative;
+            animation: lightboxZoom 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        @keyframes lightboxZoom {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .lightbox-overlay .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 24px;
+            display: block;
+            touch-action: none;
+        }
+        .lightbox-overlay .close-lightbox {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            font-size: 2rem;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+        .lightbox-overlay .close-lightbox:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(90deg) scale(1.05);
+        }
+        .lightbox-overlay .lightbox-counter {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        .lightbox-overlay .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .lightbox-overlay .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-50%) scale(1.05);
+        }
+        .lightbox-overlay .nav-btn.prev { left: 20px; }
+        .lightbox-overlay .nav-btn.next { right: 20px; }
+
+        /* ============================================
+                   ADMIN PANEL (Hidden by default)
+                   ============================================ */
+        .admin-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(24px) saturate(200%);
+            -webkit-backdrop-filter: blur(24px) saturate(200%);
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .admin-overlay.active {
+            display: flex;
+        }
+
+        .admin-card {
+            max-width: 560px;
+            width: 100%;
+            background: rgba(10, 20, 38, 0.60);
+            backdrop-filter: blur(28px) saturate(240%);
+            -webkit-backdrop-filter: blur(28px) saturate(240%);
+            border-radius: 56px;
+            padding: 32px 26px 28px;
+            border: 1px solid rgba(255, 215, 0, 0.06);
+            box-shadow: 0 60px 120px -30px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 215, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .admin-card .glow-ring {
+            position: absolute;
+            inset: -2px;
+            border-radius: 56px;
+            padding: 2px;
+            background: conic-gradient(from 0deg, transparent, rgba(255,215,0,0.08), transparent, rgba(255,20,147,0.08), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            animation: rotateGlow 8s linear infinite;
+        }
+
+        .admin-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .admin-header i {
+            font-size: 2rem;
+            color: #f5c842;
+        }
+        .admin-header h1 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f7e7b0, #f5b82e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .admin-header .close-admin {
+            margin-left: auto;
+            background: rgba(255, 255, 255, 0.04);
+            border: none;
+            color: #f472b6;
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .admin-header .close-admin:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: rotate(90deg);
+        }
+
+        /* Login Box */
+        .login-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 28px;
+            padding: 24px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            margin-bottom: 20px;
+        }
+        .login-box label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b8cfe8;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(0, 0, 0, 0.2);
+            color: #f0f8ff;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            margin-bottom: 12px;
+            outline: none;
+        }
+        .login-box input:focus {
+            border-color: rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.03);
+        }
+        .login-box .login-btn {
+            background: linear-gradient(135deg, #f5c842, #d48d1a);
+            border: none;
+            color: #0b1219;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 14px 36px;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            width: 100%;
+            box-shadow: 0 8px 30px rgba(245, 200, 66, 0.15);
+        }
+        .login-box .login-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(245, 200, 66, 0.2);
+        }
+        .login-error {
+            color: #f472b6;
+            font-size: 0.75rem;
+            display: none;
+            margin-top: 8px;
+            text-align: center;
+        }
+        .login-error.show {
+            display: block;
+        }
+
+        /* Admin Panel Content */
+        .admin-panel-content {
+            display: none;
+        }
+        .admin-panel-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b8cfe8;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(0, 0, 0, 0.2);
+            color: #f0f8ff;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .form-group textarea {
+            border-radius: 24px;
+            resize: vertical;
+            min-height: 60px;
+            padding: 12px 16px;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.03);
+        }
+        .form-group .helper {
+            font-size: 0.6rem;
+            color: #6e8aa8;
+            margin-top: 4px;
+            display: block;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .save-btn {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            border: none;
+            color: #0b1219;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 14px 36px;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            width: 100%;
+            box-shadow: 0 8px 30px rgba(74, 222, 128, 0.15);
+        }
+        .save-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(74, 222, 128, 0.2);
+        }
+        .save-btn i {
+            margin-right: 8px;
+        }
+
+        .logout-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: #f472b6;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 10px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            margin-top: 12px;
+            width: 100%;
+        }
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #f5c842;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 18px;
+        }
+        .section-title i {
+            font-size: 1rem;
+        }
+
+        .status-msg {
+            padding: 10px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: none;
+            margin-bottom: 12px;
+        }
+        .status-msg.success {
+            display: block;
+            background: rgba(74, 222, 128, 0.04);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.04);
+        }
+        .status-msg.error {
+            display: block;
+            background: rgba(244, 114, 182, 0.04);
+            color: #f472b6;
+            border: 1px solid rgba(244, 114, 182, 0.04);
+        }
+
+        /* Screenshot management in admin */
+        .screenshot-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-top: 6px;
+        }
+        .screenshot-list .ss-item {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            aspect-ratio: 9 / 16;
+            background: rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .screenshot-list .ss-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .screenshot-list .ss-item .remove-ss {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            background: rgba(244, 114, 182, 0.8);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .screenshot-list .ss-item .remove-ss:hover {
+            transform: scale(1.1);
+        }
+        .add-ss-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .add-ss-row input {
+            flex: 1;
+            padding: 8px 14px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(0, 0, 0, 0.2);
+            color: #f0f8ff;
+            font-size: 0.8rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+        .add-ss-row button {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .add-ss-row button:hover {
+            transform: scale(1.02);
+        }
+
+        /* Responsive for admin */
+        @media (max-width: 480px) {
+            .glass-ultra {
+                padding: 24px 16px 22px;
+                border-radius: 40px;
+            }
+            .avatar-ultra {
+                width: 54px;
+                height: 54px;
+            }
+            .info-ultra .name {
+                font-size: 1.1rem;
+            }
+            .stats-ultra {
+                gap: 8px;
+            }
+            .stat-ultra .number {
+                font-size: 1.15rem;
+            }
+            .stat-ultra {
+                padding: 12px 8px;
+                border-radius: 20px;
+            }
+            .join-ultra {
+                padding: 14px 24px;
+                font-size: 0.95rem;
+                width: 100%;
+                justify-content: center;
+            }
+            .tg-ultra {
+                padding: 12px 14px;
+                border-radius: 40px;
+            }
+            .tg-left .label {
+                font-size: 0.7rem;
+            }
+            .footer-ultra {
+                gap: 12px;
+            }
+            .bio-ultra p {
+                font-size: 0.82rem;
+            }
+            .bio-ultra {
+                padding: 16px 14px;
+            }
+            .process-steps {
+                gap: 4px;
+            }
+            .process-steps .step .num {
+                font-size: 1rem;
+            }
+            .process-steps .step .txt {
+                font-size: 0.5rem;
+            }
+            .bio-ultra .highlight-box .row {
+                font-size: 0.7rem;
+            }
+            .screenshot-grid {
+                gap: 4px;
+            }
+            .screenshots-section .section-title {
+                font-size: 0.7rem;
+            }
+            .lightbox-overlay .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            .lightbox-overlay .nav-btn.prev { left: 8px; }
+            .lightbox-overlay .nav-btn.next { right: 8px; }
+            .lightbox-overlay .close-lightbox {
+                top: -40px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+            .lightbox-overlay .lightbox-counter {
+                bottom: -30px;
+                font-size: 0.7rem;
+            }
+
+            .admin-card {
+                padding: 24px 16px 20px;
+                border-radius: 40px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .admin-header h1 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (hover: none) {
+            .screenshot-grid .screenshot-item:hover {
+                transform: none;
+            }
+            .screenshot-grid .screenshot-item:hover img {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================
+LANDING PAGE
+============================================ -->
+<div class="glass-ultra" id="landingPage">
+    <div class="glow-ring"></div>
+
+    <!-- HEADER -->
+    <div class="header-ultra">
+        <div class="avatar-ultra" id="profileAvatar">
+            <img src="https://iili.io/n248whX.jpg" alt="Aditya Sharma" loading="lazy">
+        </div>
+        <div class="info-ultra">
+            <span class="brand"><i class="fas fa-hand-holding-heart"></i> <span id="companyNameDisplay">Laxmi Helping Hand</span></span>
+            <div class="name" id="userNameDisplay">Aditya Sharma</div>
+            <div class="badges">
+                <span><i class="fas fa-check-circle"></i> <span id="totalHelpedDisplay">40K+</span> Helped</span>
+                <span><span class="live-dot"></span> Active Now</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-ultra">
+        <div class="stat-ultra">
+            <span class="number gold" id="statTotalHelped">40K+</span>
+            <span class="label">Total Helped</span>
+        </div>
+        <div class="stat-ultra">
+            <span class="number green" id="statDailyHelp">800-900</span>
+            <span class="label">Daily Help</span>
+        </div>
+        <div class="stat-ultra">
+            <span class="number pink" id="statProcessFee">₹190</span>
+            <span class="label">One-Time Fee</span>
+        </div>
+        <div class="stat-ultra">
+            <span class="number blue" id="statNoReturn">0%</span>
+            <span class="label">No Return · No Interest</span>
+        </div>
+    </div>
+
+    <!-- BIO -->
+    <div class="bio-ultra">
+        <div class="help-title">
+            <i class="fas fa-hand-holding-heart"></i> How It Works
+        </div>
+        <p>
+            <strong id="bioName">Aditya Sharma</strong> — <span style="color:#f5c842;" id="bioCompany">Laxmi Helping Hand</span>.
+            <br>
+            <i class="fas fa-arrow-right" style="color:#f5c842; font-size:0.7rem; margin-right:4px;"></i>
+            <strong>One-time <span id="bioFee">₹190</span></strong> · Get the help you need — <strong id="bioReturn">No EMI · No Interest · No Return</strong>.
+        </p>
+
+        <div class="process-steps">
+            <div class="step"><span class="num">1</span><span class="txt">Pay <span id="stepFee">₹190</span></span></div>
+            <div class="step"><span class="num">2</span><span class="txt">DM on Insta</span></div>
+            <div class="step"><span class="num">3</span><span class="txt">Get Help</span></div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="row"><span>📋 One-Time Processing Fee</span> <span class="val" id="highlightFee">₹190</span></div>
+            <div class="row"><span>💸 Amount Given</span> <span class="val">As per need</span></div>
+            <div class="row"><span>🔄 Repayment</span> <span class="val" style="color:#4ade80;" id="highlightReturn">❌ No Return</span></div>
+            <div class="row"><span>📊 Interest</span> <span class="val" style="color:#4ade80;" id="highlightInterest">0%</span></div>
+        </div>
+
+        <span class="lang-tag">
+            <i class="fas fa-globe-americas"></i> English · Hindi · हिंदी
+        </span>
+    </div>
+
+    <!-- SCREENSHOTS -->
+    <div class="screenshots-section">
+        <div class="section-title">
+            <i class="fas fa-images"></i> Help Proof · Real Transactions
+        </div>
+        <div class="screenshot-grid" id="screenshotGrid">
+            <!-- Dynamic from JS -->
+        </div>
+    </div>
+
+    <!-- INSTAGRAM DM -->
+    <div class="tg-ultra">
+        <div class="tg-left">
+            <i class="fab fa-instagram"></i>
+            <div class="label">
+                <span id="instaUsernameDisplay">@aditya_sharma._44</span> · <span style="color:#E4405F;">DM for Help</span>
+            </div>
+        </div>
+        <a href="https://ig.me/m/aditya_sharma._44" target="_blank" class="join-ultra" id="instaLinkBtn">
+            <i class="fas fa-comment-dots"></i> <span>Chat on Instagram</span>
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-ultra">
+        <span><i class="fas fa-user-check"></i> 800+ helped today</span>
+        <span><i class="fas fa-clock"></i> 24/7 Active</span>
+        <span><i class="fas fa-shield-alt"></i> 100% Trusted</span>
+        <span class="live-badge"><i class="fas fa-circle"></i> 40K+ members</span>
+    </div>
+
+    <!-- ===== ADMIN TRIGGER ===== -->
+    <div class="admin-trigger" onclick="openAdmin()">
+        <span><i class="fas fa-shield-alt"></i> 100% Trusted & Genuine Page</span>
+    </div>
+</div>
+
+<!-- ============================================
+LIGHTBOX
+============================================ -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="close-lightbox" id="closeLightbox"><i class="fas fa-times"></i></button>
+    <button class="nav-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+    <button class="nav-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-content" id="lightboxContent">
+        <img src="" alt="Screenshot" id="lightboxImg">
+    </div>
+    <div class="lightbox-counter" id="lightboxCounter">1 / 9</div>
+</div>
+
+<!-- ============================================
+ADMIN PANEL OVERLAY
+============================================ -->
+<div class="admin-overlay" id="adminOverlay">
+    <div class="admin-card">
+        <div class="glow-ring"></div>
+
+        <div class="admin-header">
+            <i class="fas fa-crown"></i>
+            <h1>Admin Panel</h1>
+            <button class="close-admin" onclick="closeAdmin()"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- ===== LOGIN ===== -->
+        <div class="login-box" id="adminLoginBox">
+            <label><i class="fas fa-user"></i> Username</label>
+            <input type="text" id="adminUsername" placeholder="Enter username..." onkeydown="if(event.key==='Enter') doAdminLogin()">
+            <label><i class="fas fa-key"></i> Password</label>
+            <input type="password" id="adminPassword" placeholder="Enter password..." onkeydown="if(event.key==='Enter') doAdminLogin()">
+            <button class="login-btn" onclick="doAdminLogin()"><i class="fas fa-sign-in-alt"></i> Login</button>
+            <div class="login-error" id="adminLoginError">❌ Wrong username or password!</div>
+        </div>
+
+        <!-- ===== ADMIN PANEL CONTENT ===== -->
+        <div class="admin-panel-content" id="adminPanelContent">
+
+            <div class="status-msg" id="adminStatusMsg"></div>
+
+            <div class="section-title"><i class="fas fa-user-edit"></i> Basic Settings</div>
+
+            <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" id="editCompanyName" value="Laxmi Helping Hand">
+            </div>
+
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="editUserName" value="Aditya Sharma">
+            </div>
+
+            <div class="form-group">
+                <label>Profile Picture URL</label>
+                <input type="text" id="editProfilePic" value="https://iili.io/n248whX.jpg">
+                <span class="helper">Paste direct image URL (jpg/png)</span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Total Helped</label>
+                    <input type="text" id="editTotalHelped" value="40K+">
+                </div>
+                <div class="form-group">
+                    <label>Daily Help</label>
+                    <input type="text" id="editDailyHelp" value="800-900">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>One-Time Fee</label>
+                    <input type="text" id="editProcessFee" value="₹190">
+                </div>
+                <div class="form-group">
+                    <label>Return / Interest</label>
+                    <input type="text" id="editNoReturn" value="0% · No Return">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Instagram DM Link</label>
+                <input type="text" id="editInstaLink" value="https://ig.me/m/aditya_sharma._44">
+                <span class="helper">Change username after ig.me/m/</span>
+            </div>
+
+            <div class="form-group">
+                <label>Instagram Username (Display)</label>
+                <input type="text" id="editInstaUsername" value="@aditya_sharma._44">
+            </div>
+
+            <!-- Screenshots -->
+            <div class="section-title" style="margin-top:18px;"><i class="fas fa-images"></i> Screenshots (max 9)</div>
+
+            <div class="screenshot-list" id="adminScreenshotList">
+                <!-- Dynamic -->
+            </div>
+
+            <div class="add-ss-row">
+                <input type="text" id="newScreenshotUrl" placeholder="Paste image URL...">
+                <button onclick="adminAddScreenshot()"><i class="fas fa-plus"></i> Add</button>
+            </div>
+
+            <button class="save-btn" onclick="adminSaveAll()" style="margin-top:18px;">
+                <i class="fas fa-save"></i> Save All Changes
+            </button>
+
+            <button class="logout-btn" onclick="adminLogout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ================================================================
+    // DATA (ENCRYPTED CREDENTIALS)
+    // ================================================================
+    // Username: PRINCE01 | Password: LATUR@9950
+    // Encrypted using Base64 (encoded)
+    const ENC_USER = 'UFJJTkNFMDE=';        // PRINCE01
+    const ENC_PASS = 'TEFUVVJAOTk1MA==';    // LATUR@9950
+
+    function decode(str) {
+        try {
+            return atob(str);
+        } catch(e) {
+            return '';
+        }
+    }
+
+    // ================================================================
+    // ADMIN PANEL STATE
+    // ================================================================
+    let adminLoggedIn = false;
+
+    // Data store
+    let siteData = {
+        companyName: 'Laxmi Helping Hand',
+        userName: 'Aditya Sharma',
+        profilePic: 'https://iili.io/n248whX.jpg',
+        totalHelped: '40K+',
+        dailyHelp: '800-900',
+        processFee: '₹190',
+        noReturn: '0% · No Return',
+        instaLink: 'https://ig.me/m/aditya_sharma._44',
+        instaUsername: '@aditya_sharma._44',
+        screenshots: [
+            'https://iili.io/n24PUPt.jpg',
+            'https://iili.io/n24idRj.jpg',
+            'https://iili.io/n24ic0X.jpg',
+            'https://iili.io/n24iN19.jpg',
+            'https://iili.io/n24itkJ.jpg',
+            'https://iili.io/n24sI49.jpg',
+            'https://iili.io/n24swjR.jpg',
+            'https://iili.io/n24LHwx.jpg',
+            'https://iili.io/n24LYSn.jpg'
+        ]
+    };
+
+    // Load from localStorage
+    function loadSiteData() {
+        const saved = localStorage.getItem('laxmi_site_data');
+        if (saved) {
+            try {
+                const parsed = JSON.parse(saved);
+                siteData = { ...siteData, ...parsed };
+            } catch(e) {}
+        }
+    }
+    loadSiteData();
+
+    function saveSiteData() {
+        localStorage.setItem('laxmi_site_data', JSON.stringify(siteData));
+    }
+
+    // ================================================================
+    // RENDER LANDING PAGE
+    // ================================================================
+    function renderLandingPage() {
+        // Basic info
+        document.getElementById('companyNameDisplay').textContent = siteData.companyName;
+        document.getElementById('userNameDisplay').textContent = siteData.userName;
+        document.getElementById('bioName').textContent = siteData.userName;
+        document.getElementById('bioCompany').textContent = siteData.companyName;
+        document.getElementById('bioFee').textContent = siteData.processFee;
+        document.getElementById('stepFee').textContent = siteData.processFee;
+        document.getElementById('highlightFee').textContent = siteData.processFee;
+
+        // Stats
+        document.getElementById('totalHelpedDisplay').textContent = siteData.totalHelped;
+        document.getElementById('statTotalHelped').textContent = siteData.totalHelped;
+        document.getElementById('statDailyHelp').textContent = siteData.dailyHelp;
+        document.getElementById('statProcessFee').textContent = siteData.processFee;
+        document.getElementById('statNoReturn').textContent = siteData.noReturn;
+
+        // Return/Interest
+        const returnText = siteData.noReturn || '0% · No Return';
+        document.getElementById('bioReturn').textContent = returnText;
+        document.getElementById('highlightReturn').textContent = returnText.includes('No') ? '❌ No Return' : returnText;
+        document.getElementById('highlightInterest').textContent = siteData.noReturn.includes('0%') ? '0%' : siteData.noReturn;
+
+        // Instagram
+        document.getElementById('instaUsernameDisplay').textContent = siteData.instaUsername;
+        document.getElementById('instaLinkBtn').href = siteData.instaLink;
+
+        // Profile Pic
+        const avatar = document.querySelector('#profileAvatar img');
+        if (avatar) {
+            avatar.src = siteData.profilePic;
+        }
+
+        // Screenshots
+        renderScreenshots();
+    }
+
+    // ================================================================
+    // RENDER SCREENSHOTS
+    // ================================================================
+    function renderScreenshots() {
+        const grid = document.getElementById('screenshotGrid');
+        grid.innerHTML = '';
+        siteData.screenshots.forEach((url, index) => {
+            const div = document.createElement('div');
+            div.className = 'screenshot-item';
+            div.setAttribute('data-index', index);
+            div.innerHTML = `<img src="${url}" alt="Help proof ${index+1}" loading="lazy">`;
+            div.addEventListener('click', function() {
+                openLightbox(index);
+            });
+            grid.appendChild(div);
+        });
+    }
+
+    // ================================================================
+    // LIGHTBOX
+    // ================================================================
+    const lightboxUrls = siteData.screenshots;
+    let currentLightboxIndex = 0;
+
+    function openLightbox(index) {
+        if (index < 0 || index >= lightboxUrls.length) return;
+        currentLightboxIndex = index;
+        document.getElementById('lightboxImg').src = lightboxUrls[currentLightboxIndex];
+        document.getElementById('lightboxCounter').textContent = (currentLightboxIndex + 1) + ' / ' + lightboxUrls.length;
+        document.getElementById('lightboxOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Reset animation
+        const content = document.getElementById('lightboxContent');
+        content.style.animation = 'none';
+        requestAnimationFrame(() => {
+            content.style.animation = 'lightboxZoom 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+        });
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightboxOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Lightbox events
+    document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (currentLightboxIndex < lightboxUrls.length - 1) {
+            openLightbox(currentLightboxIndex + 1);
+        }
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (currentLightboxIndex > 0) {
+            openLightbox(currentLightboxIndex - 1);
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        const overlay = document.getElementById('lightboxOverlay');
+        if (!overlay.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            if (currentLightboxIndex < lightboxUrls.length - 1) openLightbox(currentLightboxIndex + 1);
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            if (currentLightboxIndex > 0) openLightbox(currentLightboxIndex - 1);
+        }
+    });
+
+    // Touch swipe for lightbox
+    let touchStartX = 0;
+    document.getElementById('lightboxOverlay').addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.getElementById('lightboxOverlay').addEventListener('touchend', function(e) {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                if (currentLightboxIndex < lightboxUrls.length - 1) openLightbox(currentLightboxIndex + 1);
+            } else {
+                if (currentLightboxIndex > 0) openLightbox(currentLightboxIndex - 1);
+            }
+        }
+    }, { passive: true });
+
+    // ================================================================
+    // ADMIN PANEL FUNCTIONS
+    // ================================================================
+    function openAdmin() {
+        document.getElementById('adminOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Reset login state
+        adminLoggedIn = false;
+        document.getElementById('adminLoginBox').style.display = 'block';
+        document.getElementById('adminPanelContent').classList.remove('active');
+        document.getElementById('adminUsername').value = '';
+        document.getElementById('adminPassword').value = '';
+        document.getElementById('adminLoginError').classList.remove('show');
+        // Load current data into form
+        loadAdminFields();
+        renderAdminScreenshots();
+    }
+
+    function closeAdmin() {
+        document.getElementById('adminOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // ================================================================
+    // ADMIN LOGIN (with encryption)
+    // ================================================================
+    function doAdminLogin() {
+        const username = document.getElementById('adminUsername').value.trim();
+        const password = document.getElementById('adminPassword').value.trim();
+
+        const validUser = decode(ENC_USER);
+        const validPass = decode(ENC_PASS);
+
+        if (username === validUser && password === validPass) {
+            adminLoggedIn = true;
+            document.getElementById('adminLoginBox').style.display = 'none';
+            document.getElementById('adminPanelContent').classList.add('active');
+            document.getElementById('adminLoginError').classList.remove('show');
+            loadAdminFields();
+            renderAdminScreenshots();
+        } else {
+            document.getElementById('adminLoginError').classList.add('show');
+        }
+    }
+
+    // ================================================================
+    // ADMIN: LOAD FIELDS
+    // ================================================================
+    function loadAdminFields() {
+        document.getElementById('editCompanyName').value = siteData.companyName || '';
+        document.getElementById('editUserName').value = siteData.userName || '';
+        document.getElementById('editProfilePic').value = siteData.profilePic || '';
+        document.getElementById('editTotalHelped').value = siteData.totalHelped || '';
+        document.getElementById('editDailyHelp').value = siteData.dailyHelp || '';
+        document.getElementById('editProcessFee').value = siteData.processFee || '';
+        document.getElementById('editNoReturn').value = siteData.noReturn || '';
+        document.getElementById('editInstaLink').value = siteData.instaLink || '';
+        document.getElementById('editInstaUsername').value = siteData.instaUsername || '';
+    }
+
+    // ================================================================
+    // ADMIN: SCREENSHOTS
+    // ================================================================
+    function renderAdminScreenshots() {
+        const container = document.getElementById('adminScreenshotList');
+        container.innerHTML = '';
+        siteData.screenshots.forEach((url, index) => {
+            const div = document.createElement('div');
+            div.className = 'ss-item';
+            div.innerHTML = `
+                <img src="${url}" alt="Screenshot ${index+1}" loading="lazy">
+                <button class="remove-ss" onclick="adminRemoveScreenshot(${index})"><i class="fas fa-times"></i></button>
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    function adminAddScreenshot() {
+        const input = document.getElementById('newScreenshotUrl');
+        const url = input.value.trim();
+        if (!url) return;
+        if (siteData.screenshots.length >= 9) {
+            adminShowStatus('Maximum 9 screenshots allowed!', 'error');
+            return;
+        }
+        siteData.screenshots.push(url);
+        input.value = '';
+        renderAdminScreenshots();
+        adminShowStatus('Screenshot added!', 'success');
+    }
+
+    function adminRemoveScreenshot(index) {
+        siteData.screenshots.splice(index, 1);
+        renderAdminScreenshots();
+        adminShowStatus('Screenshot removed!', 'success');
+    }
+
+    // ================================================================
+    // ADMIN: SAVE ALL
+    // ================================================================
+    function adminSaveAll() {
+        siteData.companyName = document.getElementById('editCompanyName').value.trim();
+        siteData.userName = document.getElementById('editUserName').value.trim();
+        siteData.profilePic = document.getElementById('editProfilePic').value.trim();
+        siteData.totalHelped = document.getElementById('editTotalHelped').value.trim();
+        siteData.dailyHelp = document.getElementById('editDailyHelp').value.trim();
+        siteData.processFee = document.getElementById('editProcessFee').value.trim();
+        siteData.noReturn = document.getElementById('editNoReturn').value.trim();
+        siteData.instaLink = document.getElementById('editInstaLink').value.trim();
+        siteData.instaUsername = document.getElementById('editInstaUsername').value.trim();
+
+        saveSiteData();
+        renderLandingPage();
+        adminShowStatus('✅ All changes saved successfully!', 'success');
+
+        // Update lightbox URLs
+        lightboxUrls.length = 0;
+        siteData.screenshots.forEach(url => lightboxUrls.push(url));
+    }
+
+    // ================================================================
+    // ADMIN: LOGOUT
+    // ================================================================
+    function adminLogout() {
+        adminLoggedIn = false;
+        document.getElementById('adminLoginBox').style.display = 'block';
+        document.getElementById('adminPanelContent').classList.remove('active');
+        document.getElementById('adminUsername').value = '';
+        document.getElementById('adminPassword').value = '';
+        document.getElementById('adminLoginError').classList.remove('show');
+        adminShowStatus('', '');
+    }
+
+    // ================================================================
+    // ADMIN: STATUS MESSAGE
+    // ================================================================
+    function adminShowStatus(msg, type) {
+        const el = document.getElementById('adminStatusMsg');
+        el.textContent = msg;
+        el.className = 'status-msg ' + (type || '');
+        if (msg) {
+            setTimeout(() => {
+                el.className = 'status-msg';
+            }, 4000);
+        }
+    }
+
+    // ================================================================
+    // INIT
+    // ================================================================
+    renderLandingPage();
+
+    // Close admin on Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const overlay = document.getElementById('adminOverlay');
+            if (overlay.classList.contains('active')) {
+                closeAdmin();
+            }
+        }
+    });
+
+    console.log('✅ Laxmi Helping Hand Loaded!');
+    console.log('🔒 Admin Access: Click "100% Trusted & Genuine Page" at bottom.');
+</script>
+
+</body>
+</html>
